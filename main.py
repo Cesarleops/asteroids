@@ -1,8 +1,8 @@
 import pygame
 from constants import *
 from player import Player
-
-
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 
 
 
@@ -20,8 +20,15 @@ def main():
 
     drawable = pygame.sprite.Group()
 
+    asteroids = pygame.sprite.Group()
+
+    Asteroid.containers = (asteroids,updatable,drawable)
 
     Player.containers = (updatable, drawable)
+
+    AsteroidField.containers = (updatable)
+
+    asteroid_field = AsteroidField()
 
     dt = 0
     # Creates a display using, recieves a tuple as argument indicating the width and height of the window
