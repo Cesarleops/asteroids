@@ -71,11 +71,18 @@ def main():
                print("GAME OVER")
                pygame.quit()
 
+           for shot in shots:
+               if shot.is_colliding(asteroid):
+                       shot.kill()
+                       asteroid.split()
+
+
 
         for member in drawable:
             member.draw(screen)
 
      
+      
    
 
         #Update the screen
